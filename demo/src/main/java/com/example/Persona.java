@@ -1,6 +1,9 @@
 package com.example;
 
-public class Persona {
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Persona implements ISponsoreable {
     
    private String nombre;
    private String nacionalidad;
@@ -27,5 +30,38 @@ public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
 
+//para heredarle los metodos de Isponsoreable a piloto
+@Override
+public void agregar(SponsorContrato contrato) {
+
+}
+
+@Override
+public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaHasta) {
+
+
+}
+
+@Override
+public void remover(Sponsor sponsor) {
+
+}
+
+@Override
+public void remover(String nombre) {
+
+}
+@Override
+public void remover(Sponsor sponsor, String ubicacion) {
+
+}
+@Override
+public ArrayList<Sponsor> sponsorsHabilitados() {
+    return null;
+}
+@Override
+public ArrayList<SponsorContrato> getSponsors() {
+    return null;
+}
 
 }

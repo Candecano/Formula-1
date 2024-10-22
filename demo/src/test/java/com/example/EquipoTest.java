@@ -1,6 +1,8 @@
 package com.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
 public class EquipoTest {
     @Test 
 void creacion_de_un_equipo_con_ingeniero_principal(){
@@ -99,7 +101,31 @@ void eliminar_piloto_y_mecanico() {
     assertTrue(equipo.getMecanicos().contains(mecanico2));
 }
 
+@Test
 
+void se_agreaga_un_contrato_de_sponsor(){
+    //no debe estar dos veces dos sponsor en la misma ubicacion
+    Equipo equipo = new Equipo("Ferrari",  new Ingeniero("Bryan Bozzi", "Italiano"));
+
+
+    LocalDate fechaInicial=LocalDate.of(2024, 10, 21);
+    LocalDate fechahasta=LocalDate.of(2026, 10, 21);
+
+    //primer contrato
+    SponsorContrato contrato1 = new SponsorContrato("Casco", (fechaInicial), (fechahasta));
+
+    LocalDate fechaInicial2=LocalDate.of(2024, 10, 22);
+  //segundo contrato
+    SponsorContrato contrato2 = new SponsorContrato("Casco", (fechaInicial2), null);
+    
+    SponsorContrato contrato3 = new SponsorContrato("Traje Piloto", (fechaInicial2), null);
+
+
+assertTrue(equipo.agregar(contrato3)); 
+assertTrue(equipo.agregar(contrato2));
+assertFalse(equipo.agregar(contrato1));
+
+}
 
 
 

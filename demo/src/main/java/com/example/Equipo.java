@@ -1,11 +1,13 @@
 package com.example;
 import java.util.ArrayList;
-public class Equipo {
+public class Equipo implements ISponsoreable {
     private String scuderia;
     private Ingeniero ingenieroPrincipal;
     private ArrayList<Piloto> pilotos = new ArrayList<>();
     private ArrayList<Mecanico> mecanicos = new ArrayList<>();
- 
+    private ArrayList<SponsorContrato> sponsors = new ArrayList<>();
+    private SponsorContrato contrato;
+    private Sponsor sponsor;
     public Equipo(String scuderia, Ingeniero ingenieroPrincipal) {
         this.scuderia = scuderia;
         this.ingenieroPrincipal = ingenieroPrincipal;
@@ -54,9 +56,25 @@ public ArrayList<Piloto> setPilotos() {
         return mecanicos;
     }
 
+    public SponsorContrato getContrato() {
+        return contrato;
+    }
 
-//sacar pilotos, mecanicos
-   
+    public void setContrato(SponsorContrato contrato) {
+        this.contrato = contrato;
+    }
+
+
+    public Sponsor getSponsor() {
+        return sponsor;
+    }
+
+    public void setSponsor(Sponsor sponsor) {
+        this.sponsor = sponsor;
+    }
+
+
+
     public void sacarPiloto(Piloto piloto) {
         pilotos.remove(piloto);
     }
@@ -64,6 +82,25 @@ public ArrayList<Piloto> setPilotos() {
         mecanicos.remove(mecanico);
     }
    
+
+
+
+//sacar pilotos, mecanicos
+   
+@Override
+public boolean agregar(SponsorContrato contrato) {
+    for (SponsorContrato existeSponsorMismaUbicacion : sponsors) {
+        if (existeSponsorMismaUbicacion.getUbicacion().equals(contrato.getUbicacion())) {
+            return false;
+        }
+    }
+    sponsors.add(contrato);
+
+    return true;
+}
+
+
+
 
 
 

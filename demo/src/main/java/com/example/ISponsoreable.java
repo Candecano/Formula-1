@@ -1,6 +1,19 @@
 package com.example;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public interface ISponsoreable {
 
-    
+ public  ArrayList<SponsorContrato> getSponsors();
+
+ public boolean agregar (SponsorContrato contrato);
+
+public void agregar (Sponsor sponsor, String ubicacion, LocalDate fechaHasta);
+
+public void remover (Sponsor sponsor);
+public void remover (String nombre);
+public void remover(Sponsor sponsor, String ubicacion);
+public ArrayList<Sponsor> sponsorsHabilitados();
+
 }
