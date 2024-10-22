@@ -5,11 +5,13 @@ public class SponsorContrato {
     private LocalDate fechaDesde;
     private LocalDate fechaHasta;
     public SponsorContrato(String ubicacion, LocalDate fechaDesde, LocalDate fechaHasta) {
+        if (fechaHasta != null && (fechaHasta.isEqual(fechaDesde) || fechaHasta.isBefore(fechaDesde))) {
+            throw new IllegalArgumentException();
+        }
         this.ubicacion = ubicacion;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
     }
-
 public LocalDate getFechaDesde() {
         return fechaDesde;
     }
@@ -30,8 +32,11 @@ public void setFechaDesde(LocalDate fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
 public void setFechaHasta(LocalDate fechaHasta) {
-        this.fechaHasta = fechaHasta;
+    if (fechaHasta != null && (fechaHasta.isEqual(fechaDesde) || fechaHasta.isBefore(fechaDesde))) {
+        throw new IllegalArgumentException();
     }
+    this.fechaHasta = fechaHasta;
+}
 
 
 

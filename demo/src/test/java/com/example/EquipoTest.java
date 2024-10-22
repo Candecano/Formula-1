@@ -116,7 +116,9 @@ void se_agreaga_un_contrato_de_sponsor(){
 
     LocalDate fechaInicial2=LocalDate.of(2024, 10, 22);
   //segundo contrato
-    SponsorContrato contrato2 = new SponsorContrato("Casco", (fechaInicial2), null);
+
+  LocalDate fechaInicial3=LocalDate.of(2024, 11, 22);
+    SponsorContrato contrato2 = new SponsorContrato("Casco", (fechaInicial2), (fechaInicial3));
     
     SponsorContrato contrato3 = new SponsorContrato("Traje Piloto", (fechaInicial2), null);
 
