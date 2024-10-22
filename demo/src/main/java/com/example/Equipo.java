@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Equipo {
     private String scuderia;
     private Ingeniero ingenieroPrincipal;
-    private ArrayList<Ingeniero> ingenieros = new ArrayList<>();
     private ArrayList<Piloto> pilotos = new ArrayList<>();
     private ArrayList<Mecanico> mecanicos = new ArrayList<>();
  
@@ -11,19 +10,17 @@ public class Equipo {
         this.scuderia = scuderia;
         this.ingenieroPrincipal = ingenieroPrincipal;
     }
-    //añadir ingeniero, piloto y mecanico
-    public void añadirIngeniero(Ingeniero ingeniero) {
-        ingenieros.add(ingeniero);
-    }
+   
+
+    //añadir piloto y mecanico
+   
     public void añadirPiloto(Piloto piloto) {
         pilotos.add(piloto);
     }
     public void añadirMecanico(Mecanico mecanico) {
         mecanicos.add(mecanico);
     }
-    public ArrayList<Ingeniero> getIngenieros() {
-        return ingenieros;
-    }
+   
     public String getNombre() {
         return scuderia;
 
@@ -50,10 +47,16 @@ public class Equipo {
     }
 
 
-//sacar pilotos,ingenieros, mecanicos
-    public void sacarIngeniero(Ingeniero ingeniero) {
-        ingenieros.remove(ingeniero);
+public ArrayList<Piloto> setPilotos() {
+        return pilotos;
     }
+    public ArrayList<Mecanico> setMecanicos() {
+        return mecanicos;
+    }
+
+
+//sacar pilotos, mecanicos
+   
     public void sacarPiloto(Piloto piloto) {
         pilotos.remove(piloto);
     }

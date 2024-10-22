@@ -1,14 +1,9 @@
 package com.example;
 
-public class Mecanico{
-    private Persona mecanico;
+public class Mecanico extends Persona{
 
-    public Mecanico (Persona mecanico) {
-        this.mecanico = mecanico;
+    public Mecanico(String nombre, String nacionalidad) {
+        super(nombre, nacionalidad);    
     }
-
-public Persona getMecanico() {
-        return mecanico;
-    }
-
+   
 }
