@@ -9,7 +9,7 @@ public interface ISponsoreable {
 
  public boolean agregar (SponsorContrato contrato);
 
-public void agregar (Sponsor sponsor, String ubicacion, LocalDate fechaHasta);
+public boolean agregar (Sponsor sponsor, String ubicacion, LocalDate fechaHasta);
 
 public void remover (Sponsor sponsor);
 public void remover (String nombre);

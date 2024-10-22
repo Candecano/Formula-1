@@ -32,7 +32,8 @@ public void setNacionalidad(String nacionalidad) {
 
 //para heredarle los metodos de Isponsoreable a piloto
 @Override
-public void agregar(SponsorContrato contrato) {
+public boolean agregar(SponsorContrato contrato) {
+    return false;
 
 }
 

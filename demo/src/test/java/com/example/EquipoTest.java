@@ -129,6 +129,26 @@ assertFalse(equipo.agregar(contrato1));
 
 }
 
+@Test
+
+void se_agrega_sponsor_a_contrato(){
+    Ingeniero ingPrincipal = new Ingeniero("Bryan Bozzi", "Italiano");
+    Equipo equipo = new Equipo("Ferrari", ingPrincipal);
+    Sponsor sponsor = new Sponsor ("Shell");
+    Sponsor sponsor2 = new Sponsor ("Santander");
+    equipo.agregar(sponsor, "Casco", LocalDate.now());
+    //no se agrega en la misma ubicacion
+    assertFalse(equipo.agregar(sponsor2, "Casco", LocalDate.now()));
+
+}
+
+
+
+
+
+
+
+
 
 
 

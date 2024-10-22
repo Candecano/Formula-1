@@ -1,4 +1,5 @@
 package com.example;
+import java.time.LocalDate;
 import java.util.ArrayList;
 public class Equipo implements ISponsoreable {
     private String scuderia;
@@ -99,9 +100,11 @@ public boolean agregar(SponsorContrato contrato) {
     return true;
 }
 
-
-
-
+ @Override
+    public boolean agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde) {
+        SponsorContrato nuevoContrato = new SponsorContrato(ubicacion, fechaDesde, null);
+        return agregar(nuevoContrato);
+    }
 
 
 }
