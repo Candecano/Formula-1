@@ -4,6 +4,7 @@ public class Circuito implements ISponsoreable {
     private String nombre;
     private double longitud;
     private int vueltasCantidad;
+    
 
     public Circuito(String nombre, double longitud, int vueltasCantidad) {
         this.nombre = nombre;
