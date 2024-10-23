@@ -104,7 +104,7 @@ void eliminar_piloto_y_mecanico() {
 
 @Test
 
-void se_agreaga_un_contrato_de_sponsor(){
+void se_agrega_un_contrato_de_sponsor(){
     //no debe estar dos veces dos sponsor en la misma ubicacion
     Equipo equipo = new Equipo("Ferrari",  new Ingeniero("Bryan Bozzi", "Italiano"));
 

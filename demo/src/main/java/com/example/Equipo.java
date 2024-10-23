@@ -88,7 +88,7 @@ public ArrayList<Piloto> setPilotos() {
 
 
 
-//sacar pilotos, mecanicos
+
    
 @Override
 public boolean agregar(SponsorContrato contrato) {

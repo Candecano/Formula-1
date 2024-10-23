@@ -38,9 +38,9 @@ public boolean agregar(SponsorContrato contrato) {
 }
 
 @Override
-public void agregar(Sponsor sponsor, String ubicacion, LocalDate fechaHasta) {
+public boolean agregar(Sponsor sponsor, String ubicacion, LocalDate fechaHasta) {
 
-
+return false;
 }
 
 @Override
@@ -48,10 +48,7 @@ public void remover(Sponsor sponsor) {
 
 }
 
-@Override
-public void remover(String nombre) {
 
-}
 @Override
 public void remover(Sponsor sponsor, String ubicacion) {
 
