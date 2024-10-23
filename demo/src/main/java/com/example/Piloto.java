@@ -9,7 +9,8 @@ public class Piloto extends Persona  {
 private ArrayList<SponsorContrato> sponsors = new ArrayList<>();
     private SponsorContrato contrato;
     private Sponsor sponsor;
-
+    private Equipo equipo;
+    private Carrera carrera;
     public Piloto(String nombre, String nacionalidad) {
         super(nombre, nacionalidad);    
     }
@@ -30,6 +31,24 @@ private ArrayList<SponsorContrato> sponsors = new ArrayList<>();
     public void setSponsor(Sponsor sponsor) {
         this.sponsor = sponsor;
     }
+
+    public Equipo getEquipo() {
+
+        return equipo;
+
+    }
+
+
+
+    public Carrera getCarrera() {
+
+        return carrera;
+
+    }
+
+
+
+
 
 @Override
 public boolean agregar(SponsorContrato contrato) {
@@ -74,6 +93,15 @@ public ArrayList<Sponsor> sponsorsHabilitados() {
         .collect(Collectors.toList());      
 
     return new ArrayList<>(habilitados);
+}
+
+public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
+    
 }
 
     

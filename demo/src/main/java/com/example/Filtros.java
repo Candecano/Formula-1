@@ -21,5 +21,10 @@ public class Filtros {
         Predicate<Piloto> filtro= e -> e.getNacionalidad().equalsIgnoreCase(nacionalidad);
         return filtro;
 }
+ public Predicate<Piloto> filtroPorEquipoenCarrera(Equipo equipo, Carrera carrera){
+    Predicate<Piloto> filtro = e -> e.getEquipo().equals(equipo) && e.getCarrera().equals(carrera);
+    return filtro;
+ }
+
 
 }
