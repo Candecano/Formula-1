@@ -3,7 +3,7 @@ package com.example;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Persona implements ISponsoreable {
+public class Persona implements ISponsoreable, INombreParaLED {
     
    private String nombre;
    private String nacionalidad;
@@ -61,5 +61,11 @@ public ArrayList<Sponsor> sponsorsHabilitados() {
 public ArrayList<SponsorContrato> getSponsors() {
     return null;
 }
+//para heredarle los metodos de INombreParaLED a piloto
+@Override
+public void getNombreParaLED() {
 
+}
+
+    
 }

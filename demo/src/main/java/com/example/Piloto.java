@@ -104,6 +104,9 @@ public void setEquipo(Equipo equipo) {
     
 }
 
-    
+@Override
+public void getNombreParaLED() {
+      
 }
 
+}

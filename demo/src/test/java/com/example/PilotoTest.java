@@ -107,6 +107,13 @@ void se_fitra_sponsors_habilitados(){
     
 }
 
+@Test
+
+void pantalla_led_piloto() {
+    INombreParaLED  piloto =  new Piloto("Franco Colapinto", "Argentino");
+    var pantallaLED = new PantallaLED(piloto);
+    assertEquals("Piloto: Franco Colapinto", pantallaLED.getTexto());
+}
 
 
 

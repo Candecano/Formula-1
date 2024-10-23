@@ -1,6 +1,6 @@
 package com.example;
 
-public class Sponsor {
+public class Sponsor implements INombreParaLED {
     private String nombre;
     public Sponsor(String nombre) {
         this.nombre = nombre;
