@@ -28,7 +28,7 @@ carrera.añadirParticipantes(piloto4);
 carrera.añadirParticipantes(piloto5);
 carrera.añadirParticipantes(piloto6);
 
-Filtros filtros = new Filtros(carrera.getParticipantes());
+Filtros filtros = new Filtros(carrera.getParticipantes(), null);
 Predicate<Piloto> filtroNacioanlidadFrances = filtros.filtroPorNacionalidad("Frances");
 ArrayList<Piloto> pilotosFranceses = filtros.filtrarPilotos(filtroNacioanlidadFrances);
 assertEquals(2, pilotosFranceses.size());
@@ -72,7 +72,7 @@ piloto4.setEquipo(williams);
 piloto3.setCarrera(carrera);
 piloto4.setCarrera(carrera);
 
-Filtros filtros = new Filtros(carrera.getParticipantes());
+Filtros filtros = new Filtros(carrera.getParticipantes(), null);
 Predicate<Piloto> filtroPilotosFerrari = filtros.filtroPorEquipoenCarrera(ferrari, carrera);
 ArrayList<Piloto> pilotosFerrari = filtros.filtrarPilotos(filtroPilotosFerrari);
 
@@ -82,6 +82,37 @@ assertTrue(pilotosFerrari.contains(piloto2));
 assertFalse (pilotosFerrari.contains(piloto3));
 
 }
+
+
+@Test
+
+void filtro_de_circuitos_mayores_a__una_logitud(){
+    Circuito circuito1 = new Circuito("Monaco", 3.34, 78);
+    Circuito circuito2 = new Circuito("Silverstone", 5.891, 52);
+    Circuito circuito3 = new Circuito("Spa-Francorchamps", 7.004, 44);
+    Circuito circuito4 = new Circuito("Interlagos", 4.309, 71);
+    ArrayList<Circuito> circuitos = new ArrayList<>();
+    circuitos.add(circuito1);
+    circuitos.add(circuito2);
+    circuitos.add(circuito3);
+    circuitos.add(circuito4);
+
+Filtros filtros = new Filtros(new ArrayList<>(), circuitos);
+        Predicate<Circuito> filtroLongitudMayorA = filtros.filtroPorLongitudMayorA(5.0);
+        ArrayList<Circuito> circuitosFiltrados = filtros.filtrarCircuitos(filtroLongitudMayorA);
+
+        assertEquals(2, circuitosFiltrados.size());
+        assertTrue(circuitosFiltrados.contains(circuito2));
+        assertTrue(circuitosFiltrados.contains(circuito3));
+
+
+
+
+
+}
+
+
+
 
 
 
