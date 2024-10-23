@@ -6,4 +6,17 @@ public class Mecanico extends Persona{
         super(nombre, nacionalidad);    
     }
    
+    public Mecanico(String nombre) {
+        super(nombre, nombre);
+    }
+    
+    @Override
+    public String getNombreParaLED() {
+        return "Mecanico: " + super.getNombreParaLED();
+    }
+    
+
+
+
+
 }

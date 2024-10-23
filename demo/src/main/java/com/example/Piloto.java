@@ -104,9 +104,13 @@ public void setEquipo(Equipo equipo) {
     
 }
 
+public Piloto(String nombre) {
+    super(nombre, nombre);
+}
+
 @Override
-public void getNombreParaLED() {
-      
+public String getNombreParaLED() {
+    return "Piloto: " + super.getNombreParaLED();
 }
 
 }

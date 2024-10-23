@@ -2,7 +2,7 @@ package com.example;
 
 public interface INombreParaLED {
     
-public  void getNombreParaLED();
+public  String getNombreParaLED();
 
 
 

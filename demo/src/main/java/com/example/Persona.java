@@ -63,9 +63,8 @@ public ArrayList<SponsorContrato> getSponsors() {
 }
 //para heredarle los metodos de INombreParaLED a piloto
 @Override
-public void getNombreParaLED() {
-
-}
-
+    public String getNombreParaLED() {
+        return nombre;
+    }
     
 }
