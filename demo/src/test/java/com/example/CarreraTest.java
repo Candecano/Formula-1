@@ -13,7 +13,7 @@ public class CarreraTest {
 
 void se_establece_fecha_de_carrera_sin_circuito(){
     LocalDate fechaInicial=LocalDate.of(2024, 10, 21);
-    Carrera carrera = new Carrera ("Gran Premio de Las Vegas", (fechaInicial), null);
+    Carrera carrera = new Carrera ("Gran Premio de Las Vegas", (fechaInicial), null, null);
  
     //fecha correcta
     assertEquals(fechaInicial, carrera.getFecha());
@@ -26,7 +26,7 @@ void se_establece_fecha_de_carrera_sin_circuito(){
 @Test
 void se_cambia_la_fecha_de_una_carrera(){
     LocalDate fechaInicial=LocalDate.of(2024, 10, 21);
-    Carrera carrera = new Carrera ("Gran Premio de Las Vegas", (fechaInicial), null);
+    Carrera carrera = new Carrera ("Gran Premio de Las Vegas", (fechaInicial), null,null);
     LocalDate fechaNueva=LocalDate.of(2024, 10, 22);
     carrera.setFecha(fechaNueva);
     assertEquals(fechaNueva, carrera.getFecha());
@@ -38,7 +38,7 @@ void se_cambia_la_fecha_de_una_carrera(){
 void se_crea_el_Gran_Premio_de_Brasil(){
     LocalDate fechaInicial=LocalDate.of(2024, 10, 21);
    Circuito interlagos = new Circuito("Interlagos", 4.309, 71);
-   Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos);
+   Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos,null);
    Piloto piloto1 = new Piloto("Carlos Sainz", "Español");
    Piloto piloto2 = new Piloto("Charles Leclerc", "Monegasco");
    Piloto piloto3 = new Piloto("Franco Colapinto", "Argentino");
@@ -68,7 +68,7 @@ carrera.añadirParticipantes(piloto1);
 void se_agrega_más_pilotos_a_la_carrera_y_se_saca_uno(){
     LocalDate fechaInicial=LocalDate.of(2024, 10, 21);
    Circuito interlagos = new Circuito("Interlagos", 4.309, 71);
-   Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos);
+   Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos,null);
    Piloto piloto1 = new Piloto("Carlos Sainz", "Español");
    Piloto piloto2 = new Piloto("Charles Leclerc", "Monegasco");
    Piloto piloto3 = new Piloto("Logan Sargeant", "NorteAmericano");

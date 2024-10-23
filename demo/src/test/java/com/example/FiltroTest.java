@@ -13,7 +13,7 @@ public class FiltroTest {
     void filtro_pilotos_por_nacionalidad_en_una_carrera() {
 Circuito interlagos = new Circuito("Interlagos", 4.309, 71);
 LocalDate fechaInicial = LocalDate.of(2024, 11, 17);
-Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos);
+Carrera carrera = new Carrera ("Gran Premio de Brasil", (fechaInicial), interlagos,null);
    Piloto piloto1 = new Piloto("Carlos Sainz", "Español");
    Piloto piloto2 = new Piloto("Charles Leclerc", "Monegasco");
    Piloto piloto3 = new Piloto("Franco Colapinto", "Argentino");
@@ -52,7 +52,7 @@ Piloto piloto3 = new Piloto("Franco Colapinto", "Argentino");
 Piloto piloto4 = new Piloto("Alex Albon", "Britanico");
 Circuito interlagos = new Circuito("Interlagos", 4.309, 71);
 LocalDate fechaInicial = LocalDate.of(2024, 11, 17);
-Carrera carrera = new Carrera("Gran Premio de Brasil", fechaInicial, interlagos);
+Carrera carrera = new Carrera("Gran Premio de Brasil", fechaInicial, interlagos,null);
 carrera.añadirParticipantes(piloto1);
 carrera.añadirParticipantes(piloto2);
 carrera.añadirParticipantes(piloto3);

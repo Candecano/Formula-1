@@ -6,8 +6,9 @@ public class Carrera {
     private LocalDate fechaCarrera;
     private Circuito circuito;
     private ArrayList<Piloto> participantes = new ArrayList<>();
+    private ArrayList<Vueltas> vueltas = new ArrayList<>();
 
-    public Carrera(String nombreCarrera, LocalDate fechaCarrera, Circuito circuito) {
+    public Carrera(String nombreCarrera, LocalDate fechaCarrera, Circuito circuito, ArrayList<Vueltas> vueltas ) {
         this.nombreCarrera = nombreCarrera;
         this.fechaCarrera = fechaCarrera;
         this.circuito = circuito;
@@ -54,6 +55,9 @@ public class Carrera {
     }
     public void sacarPiloto(Piloto piloto) {
         participantes.remove(piloto);
+    }
+    public ArrayList<Vueltas> getVueltas() {
+        return vueltas;
     }
 
 
