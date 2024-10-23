@@ -12,7 +12,6 @@ public interface ISponsoreable {
 public boolean agregar (Sponsor sponsor, String ubicacion, LocalDate fechaHasta);
 
 public void remover (Sponsor sponsor);
-public void remover (String nombre);
 public void remover(Sponsor sponsor, String ubicacion);
 public ArrayList<Sponsor> sponsorsHabilitados();
 

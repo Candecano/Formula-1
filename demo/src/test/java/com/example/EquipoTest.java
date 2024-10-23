@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 public class EquipoTest {
     @Test 
 void creacion_de_un_equipo_con_ingeniero_principal(){
@@ -112,15 +113,15 @@ void se_agreaga_un_contrato_de_sponsor(){
     LocalDate fechahasta=LocalDate.of(2026, 10, 21);
 
     //primer contrato
-    SponsorContrato contrato1 = new SponsorContrato("Casco", (fechaInicial), (fechahasta));
+    SponsorContrato contrato1 = new SponsorContrato(null,"Casco", (fechaInicial), (fechahasta));
 
     LocalDate fechaInicial2=LocalDate.of(2024, 10, 22);
   //segundo contrato
 
   LocalDate fechaInicial3=LocalDate.of(2024, 11, 22);
-    SponsorContrato contrato2 = new SponsorContrato("Casco", (fechaInicial2), (fechaInicial3));
+    SponsorContrato contrato2 = new SponsorContrato(null,"Casco", (fechaInicial2), (fechaInicial3));
     
-    SponsorContrato contrato3 = new SponsorContrato("Traje Piloto", (fechaInicial2), null);
+    SponsorContrato contrato3 = new SponsorContrato(null,"Traje Piloto", (fechaInicial2), null);
 
 
 assertTrue(equipo.agregar(contrato3)); 
@@ -141,7 +142,19 @@ void se_agrega_sponsor_a_contrato(){
     assertFalse(equipo.agregar(sponsor2, "Casco", LocalDate.now()));
 
 }
-
+ 
+@Test
+void se_elimina_sponsor(){
+    Ingeniero ingPrincipal = new Ingeniero("Bryan Bozzi", "Italiano");
+    Equipo equipo = new Equipo("Ferrari", ingPrincipal);
+    Sponsor sponsor = new Sponsor ("Shell");
+    Sponsor sponsor2 = new Sponsor ("Santander");
+    equipo.agregar(sponsor, "Casco", LocalDate.now());
+    equipo.agregar(sponsor2, "Traje del Piloto", LocalDate.now());
+    equipo.remover(sponsor);
+    assertEquals(1, equipo.getSponsors().size());
+    assertEquals("Santander", equipo.getSponsors().get(0).getSponsor().getNombre());
+}
 
 
 

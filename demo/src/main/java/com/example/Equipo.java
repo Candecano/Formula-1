@@ -102,9 +102,24 @@ public boolean agregar(SponsorContrato contrato) {
 
  @Override
     public boolean agregar(Sponsor sponsor, String ubicacion, LocalDate fechaDesde) {
-        SponsorContrato nuevoContrato = new SponsorContrato(ubicacion, fechaDesde, null);
+        SponsorContrato nuevoContrato = new SponsorContrato(sponsor, ubicacion, fechaDesde, null);
         return agregar(nuevoContrato);
     }
+
+
+ @Override
+    public ArrayList<SponsorContrato> getSponsors() {
+        return sponsors;
+    }
+
+ @Override
+    public void remover(Sponsor sponsor) {
+        sponsors.removeIf(contrato -> contrato.getSponsor() != null && contrato.getSponsor().getNombre().equals(sponsor.getNombre()));
+    }
+
+
+
+
 
 
 }
