@@ -1,6 +1,8 @@
 package com.example;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 public class Equipo implements ISponsoreable {
     private String scuderia;
     private Ingeniero ingenieroPrincipal;
@@ -117,9 +119,21 @@ public boolean agregar(SponsorContrato contrato) {
         sponsors.removeIf(contrato -> contrato.getSponsor() != null && contrato.getSponsor().getNombre().equals(sponsor.getNombre()));
     }
 
+@Override
+    public void remover(Sponsor sponsor, String ubicacion) {
+        sponsors.removeIf(contrato -> contrato.getSponsor() != null && contrato.getSponsor().getNombre().equals(sponsor.getNombre()) && contrato.getUbicacion().equals(ubicacion));
+    }
 
+@Override
+public ArrayList<Sponsor> sponsorsHabilitados() {
+    
+    List<Sponsor> habilitados = sponsors.stream()
+        .filter(contrato -> contrato.getFechaHasta() == null)
+        .map(SponsorContrato::getSponsor)  
+        .collect(Collectors.toList());      
 
-
+    return new ArrayList<>(habilitados);
+}
 
 
 }

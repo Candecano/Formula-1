@@ -158,11 +158,41 @@ void se_elimina_sponsor(){
 
 
 
+@Test
+void se_elimina_sponsor_por_ubicacion() {
+    Ingeniero ingPrincipal = new Ingeniero("Bryan Bozzi", "Italiano");
+    Equipo equipo = new Equipo("Ferrari", ingPrincipal);
+    Sponsor sponsor = new Sponsor("Shell");
+    equipo.agregar(sponsor, "Casco", LocalDate.now());
+    equipo.agregar(sponsor, "Traje del Piloto", LocalDate.now());
+    equipo.remover(sponsor, "Casco");
+    assertEquals(1, equipo.getSponsors().size());
+    assertEquals("Shell", equipo.getSponsors().get(0).getSponsor().getNombre());
+}
 
+@Test
+void se_fitra_sponsors_habilitados(){
+    Ingeniero ingPrincipal = new Ingeniero("Bryan Bozzi", "Italiano");
+    Equipo equipo = new Equipo("Ferrari", ingPrincipal);
+    Sponsor sponsor1 = new Sponsor("Shell");
+    Sponsor sponsor2 = new Sponsor("Santander");
+    Sponsor sponsor3 = new Sponsor("Pirelli");
+    LocalDate fechaDesde1 = LocalDate.of(2024, 11, 21);
+    LocalDate fechaHasta1 = LocalDate.of(2026, 11, 22);
+    
 
+    equipo.agregar(new SponsorContrato(sponsor1, "Casco", fechaDesde1, fechaHasta1));
+    equipo.agregar(new SponsorContrato(sponsor2, "Traje del Piloto", fechaDesde1, fechaHasta1));
+    equipo.agregar(new SponsorContrato(sponsor3, "Guantes", fechaDesde1, null));
 
+    ArrayList<Sponsor> sponsorsHabilitados = equipo.sponsorsHabilitados();
+    assertEquals(1, sponsorsHabilitados.size());
+    assertTrue(sponsorsHabilitados.contains(sponsor3));
+   
+    
+}
 
-
+//II O , I y
 
 
 
